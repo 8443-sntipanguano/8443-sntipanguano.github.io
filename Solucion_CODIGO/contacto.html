@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Formulario de Login</title>
+    <meta name="viewport" content="width=device-width, user-scaleble=no,
+    initial-scale=1, maximum-scale=1,minimum-scale=1">
+    <link rel="stylesheet" href="MisEstilos.css">
+<script type="text/javascript"> 
+  function myFunction(envio) {
+    var at = document.getElementById("email").value.indexOf("@");
+    var valor = document.getElementById("campo").value;
+    submitOK = "true";
+
+    if (at == -1) {
+        alert("Not a valid e-mail!");
+        submitOK = "false";
+    }
+
+    if( isNaN(valor) ) {
+        alert("Ingrese solo números");
+        return false;
+    }
+
+    if (submitOK == "false") {
+        return false;
+    }
+     
+}
+</script>
+<!--<script type="text/javascript">
+  function elige(envio) {
+         var lista = document.formulario3.colores
+         if (lista.selectedIndex == null || lista.selectedIndex == 0) { 
+            alert("El formulario no ha sido enviado; \n Debes elegir un color de la lista.")
+            }
+         else { 
+            envio.disabled=true; envio.value='Enviando...'; envio.form.submit()
+            }   
+         }
+</script>-->
+</head>
+ <body>
+<!--El formulario--> 
+<form id="reg" name="registro" method="post" onsubmit="return myFunction()" action=""> 
+  <h2>Contacto</h2>
+  <p>Correo Electronico</p>
+  <input type="text" id="email" size="20" placeholder="&#9993; usuario@mail.com"> 
+  <p>Fecha de Nacimiento</p>
+  <input type="date" name="txtFecha">
+  <p>Teléfono</p>
+  <input type="text" id="campo" name="txtTelefono" placeholder="&#9742; Telefono">
+  <!--<input type="button" value="Enviar" onclick="return elige(this);" />-->
+  <input type="submit" name="BtnEnviar" value="Enviar">
+</html>
